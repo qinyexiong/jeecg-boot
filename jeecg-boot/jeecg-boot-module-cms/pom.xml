@@ -7,9 +7,15 @@
         <groupId>org.jeecgframework.boot</groupId>
         <version>2.4.3</version>
     </parent>
+    <artifactId>jeecg-boot-module-cms</artifactId>
+    <groupId>org.jeecgframework.boot</groupId>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>jeecg-boot-module-demo</artifactId>
+    <modules>
+        <module>jeecg-boot-module-cms-api</module>
+        <module>jeecg-boot-module-cms-biz</module>
+    </modules>
 
     <dependencies>
         <dependency>
@@ -17,10 +23,10 @@
             <artifactId>jeecg-boot-base-core</artifactId>
         </dependency>
         <!--引入微服务启动依赖 starter-->
-      <dependency>
-          <groupId>org.jeecgframework.boot</groupId>
-          <artifactId>jeecg-boot-starter-cloud</artifactId>
-      </dependency>
+        <dependency>
+            <groupId>org.jeecgframework.boot</groupId>
+            <artifactId>jeecg-boot-starter-cloud</artifactId>
+        </dependency>
         <!--rabbitmq消息队列-->
         <dependency>
             <groupId>org.jeecgframework.boot</groupId>

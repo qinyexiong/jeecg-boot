@@ -1,0 +1,55 @@
+{
+    "name" : "demo",
+    "appid" : "__UNI__3ABBF54",
+    "description" : "",
+    "versionName" : "2.2.22",
+    "versionCode" : 233,
+    "transformPx" : false,
+    "app-plus" : {
+        /* 5+App特有相关 */
+        "modules" : {
+            "Maps" : {}
+        },
+        /* 模块配置 */
+        "distribute" : {
+            /* 应用发布信息 */
+            "android" : {
+                /* android打包配置 */
+                "permissions" : []
+            },
+            "ios" : {},
+            /* ios打包配置 */
+            "sdkConfigs" : {
+                "ad" : {},
+                "maps" : {
+                    "amap" : {
+                        "appkey_ios" : "87f4d2a4a0c42e0c86cf312c8b8154e8",
+                        "appkey_android" : "87f4d2a4a0c42e0c86cf312c8b8154e8"
+                    }
+                },
+                "push" : {
+                    "unipush" : {}
+                }
+            }
+        }
+    },
+    /* SDK配置 */
+    "quickapp" : {},
+    /* 快应用特有相关 */
+    "mp-weixin" : {
+        "appid" : "wxed6e2192c26638bd",
+        "setting" : {
+            "urlCheck" : false,
+            "es6" : true
+        },
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "有定位功能需要导航定位"
+            }
+        }
+    },
+    "h5" : {
+        "title" : "Do it today",
+        "domain" : "myhjdc.cn"
+    }
+}

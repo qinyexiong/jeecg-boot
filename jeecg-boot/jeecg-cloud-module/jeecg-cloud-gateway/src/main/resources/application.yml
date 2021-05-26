@@ -20,11 +20,15 @@ spring:
         - id: jeecg-demo
           uri: lb://jeecg-demo
           predicates:
-            - Path=/mock/**,/test/**,/bigscreen/template1/**,/bigscreen/template2/**
+            - Path=/mock/**,/test/**,/bigscreen/template1/**,/bigscreen/template2/**,/actuator/**
+        - id: jeecg-cms
+          uri: lb://jeecg-cms
+          predicates:
+            - Path=/mock/**,/test/**,/bigscreen/template1/**,/bigscreen/template2/**,/actuator/**
         - id: jeecg-system
           uri: lb://jeecg-system
           predicates:
-            - Path=/sys/**,/eoa/**,/v1/**,/joa/**,/online/**,/bigscreen/**,/jmreport/**,/desform/**,/act/**,/plug-in/**,/generic/**
+            - Path=/sys/**,/eoa/**,/v1/**,/joa/**,/online/**,/bigscreen/**,/jmreport/**,/desform/**,/act/**,/plug-in/**,/generic/** ,/actuator/**
         - id: jeecg-system-websocket
           uri: lb:ws://jeecg-system
           predicates:

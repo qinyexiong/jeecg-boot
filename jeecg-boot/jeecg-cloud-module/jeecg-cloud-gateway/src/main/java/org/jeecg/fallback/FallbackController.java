@@ -18,7 +18,7 @@ public class FallbackController {
      */
     @RequestMapping("/fallback")
     public Mono<String> fallback() {
-        return Mono.just("访问超时，请稍后再试!");
+        return Mono.just("访问超时，请稍后再试!实在没办法请买芙蓉王致电19192008758");
     }
 
     /**

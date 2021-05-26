@@ -1,7 +1,10 @@
 package org.jeecg;
 
 import org.jeecg.boot.starter.rabbitmq.client.RabbitMqClient;
+import org.jeecg.common.api.vo.Result;
 import org.jeecg.common.base.BaseMap;
+import org.jeecg.modules.demo.tel.controller.TelCallController;
+import org.jeecg.modules.demo.tel.service.JeecgTestClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +25,14 @@ public class MqTest {
 		rabbitMqClient.sendMessage("test", map);
 //延迟10秒发送
 //rabbitMqClient.sendMessage("test", map,10000);
+	}
+
+	@Autowired
+	JeecgTestClient telCallController;
+	@Test
+	public void getFeign() {
+		Result<?> feign = telCallController.getFeign();
+		System.out.println(feign.getResult());
 	}
 
 

@@ -3,6 +3,7 @@ package org.jeecg.modules.system.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.jeecg.common.api.vo.Result;
 import org.jeecg.common.constant.CommonConstant;
 import org.jeecg.common.system.api.ISysBaseAPI;
@@ -52,6 +53,14 @@ public class CommonController {
      */
     @Value(value="${jeecg.uploadType}")
     private String uploadType;
+
+
+    /**
+     * 图片地址服务器前缀
+     */
+    @Value(value="${jeecg.prePaht}")
+    private String prePaht;
+
 
     /**
      * @Author 政辉
@@ -148,7 +157,13 @@ public class CommonController {
             }
             if (dbpath.contains("\\")) {
                 dbpath = dbpath.replace("\\", "/");
+
             }
+            //                由于其他端需要预览图片地址故增加路径
+            if(StringUtils.isNotEmpty(prePaht)){
+                dbpath=prePaht+dbpath;
+            }
+
             return dbpath;
         } catch (IOException e) {
             log.error(e.getMessage(), e);
